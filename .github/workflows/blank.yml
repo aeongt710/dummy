@@ -20,4 +20,4 @@ jobs:
 
     - name: Connect to AWS LightSail and Run Command
       run: |
-        ssh -i id_rsa ubuntu@100.24.44.184 'pwd'
+        ssh -o StrictHostKeyChecking=no -i id_rsa ubuntu@100.24.44.184 'pwd'

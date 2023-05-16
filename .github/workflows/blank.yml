@@ -1,4 +1,4 @@
-name: Frontend
+name: CI
 
 on:
   push:
@@ -16,6 +16,11 @@ jobs:
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > id_rsa
         chmod 600 id_rsa
+
+
+    - name: Connect to AWS LightSail and Run Command
+      run: |
+        ssh -o StrictHostKeyChecking=no -i id_rsa ubuntu@${{ secrets.LIGHTSAIL_SERVER_IP }} 'pwd'
 
 
     - name: Deploying

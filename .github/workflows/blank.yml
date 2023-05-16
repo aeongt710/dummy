@@ -25,4 +25,4 @@ jobs:
 
     - name: Deploying
       run: |
-        ssh -o StrictHostKeyChecking=no -i id_rsa ubuntu@${{ secrets.LIGHTSAIL_SERVER_IP }} 'bash -s' < ./deploy.sh
+        ssh -o StrictHostKeyChecking=no -i id_rsa ubuntu@${{ secrets.LIGHTSAIL_SERVER_IP }} 'bash /home/ubuntu/deploy.sh'
